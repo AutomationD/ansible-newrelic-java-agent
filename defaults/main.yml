@@ -1,0 +1,11 @@
+---
+
+newrelic_java_agent_version: 3.35.2
+newrelic_java_agent_file: "newrelic-agent-{{ newrelic_java_agent_version }}.jar"
+newrelic_java_agent_download_url: "http://apt.newrelic.com/newrelic/java-agent/newrelic-agent/{{ newrelic_java_agent_version }}/{{ newrelic_java_agent_file }}"
+newrelic_java_agent_user: root
+newrelic_java_agent_app_name: My Application
+newrelic_java_agent_parent_dir: /opt
+newrelic_java_agent_dir: "{{ newrelic_java_agent_parent_dir }}/newrelic"
+newrelic_java_agent_host_app: tomcat
+newrelic_java_agent_thread_profiler: true
