@@ -41,3 +41,12 @@
   notify: restart app
   tags:
     - newrelic
+
+- name: Set Directory Permissions
+  file:
+    name: "{{ newrelic_java_agent_dir }}"
+    state: directory
+    owner: "{{ newrelic_java_agent_user }}"
+    group: "{{ newrelic_java_agent_user }}"
+    recurse: yes
+  notify: restart app
