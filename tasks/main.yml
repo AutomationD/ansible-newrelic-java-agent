@@ -1,5 +1,19 @@
 ---
 
+- name: "Add {{ newrelic_java_agent_group }} group"
+  group:
+    name: "{{ newrelic_java_agent_group }}"
+    system: yes
+  when: newrelic_java_agent_manage_user
+
+- name: "Add {{ newrelic_java_agent_user }} user"
+  user:
+    name: "{{ newrelic_java_agent_user }}"
+    group: "{{ newrelic_java_agent_group }}"
+    shell: /sbin/nologin
+    system: yes
+  when: newrelic_java_agent_manage_user
+
 - name: Make sure the newrelic dir is writeable
   file:
     path: "{{ newrelic_java_agent_dir }}"
