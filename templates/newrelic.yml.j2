@@ -247,6 +247,10 @@ common: &default_settings
     com.newrelic.instrumentation.servlet-user:
       enabled: false
 
+  #labels:
+{% if newrelic_labels|default(None) != None %}
+  labels: {{ newrelic_labels }}
+{% endif %}
 
 # Application Environments
 # ------------------------------------------

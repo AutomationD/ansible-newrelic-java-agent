@@ -9,3 +9,4 @@ newrelic_java_agent_parent_dir: /opt
 newrelic_java_agent_dir: "{{ newrelic_java_agent_parent_dir }}/newrelic"
 newrelic_java_agent_host_app: tomcat
 newrelic_java_agent_thread_profiler: true
+newrelic_java_agent_labels:
