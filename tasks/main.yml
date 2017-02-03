@@ -42,6 +42,13 @@
   tags:
     - newrelic
 
+- name: Create logs directory
+  file:
+    name: "{{ newrelic_java_agent_dir }}/logs"
+    state: directory
+    owner: "{{ newrelic_java_agent_user }}"
+    group: "{{ newrelic_java_agent_user }}"
+
 - name: Set Directory Permissions
   file:
     name: "{{ newrelic_java_agent_dir }}"
