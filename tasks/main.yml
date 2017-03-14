@@ -42,7 +42,7 @@
   file:
     path: "{{ newrelic_java_agent_parent_dir }}/{{ item }}"
     state: absent
-  with_items: "{{ files.stdout_lines }}"
+  with_items: "{{ files.stdout_lines | default() }}"
   when: new_newrelic_download.changed and item != newrelic_java_agent_file
 
 - name: Set up the Newrelic config file
