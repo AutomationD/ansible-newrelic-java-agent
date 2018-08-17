@@ -1,5 +1,12 @@
 ---
 
+- name: "Validate vars"
+  assert:
+    that:
+      - newrelic_java_agent_app_name != ''            
+      - newrelic_license_key != ''
+  tags: ['check_vars']
+
 - name: "Add {{ newrelic_java_agent_group }} group"
   group:
     name: "{{ newrelic_java_agent_group }}"
